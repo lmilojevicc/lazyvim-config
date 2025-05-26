@@ -79,7 +79,6 @@ return {
 
     -- Explorer
     { "<leader>ee", function() Snacks.explorer.open() end, desc = " Open Snacks Explorer", },
-    { "<leader>ef", function() Snacks.explorer.reveal() end, desc = " Find current file in Snacks", },
 
     -- Buffer
     { "<leader>bd", function() Snacks.bufdelete() end, desc = " Delete current buffer (file or terminal)", },
@@ -165,6 +164,8 @@ return {
 
     local Snacks = require("snacks")
 
+    LazyVim.format.snacks_toggle():map("<leader>uf")
+    LazyVim.format.snacks_toggle(true):map("<leader>uF")
     Snacks.toggle.inlay_hints():map("<leader>uh", { desc = "󰅩 Toggle Inlay Hints" })
     Snacks.toggle.diagnostics():map("<leader>ud", { desc = " Toggle Diagnostics" })
     Snacks.toggle.line_number():map("<leader>uL", { desc = "󰨚 Toggle Line Numbers" })

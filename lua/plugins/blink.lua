@@ -13,17 +13,11 @@ return {
     require("blink-cmp").setup({
       keymap = {
         preset = "super-tab",
-        ["<Up>"] = { "select_prev", "fallback" },
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<C-Enter>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<CR>"] = { "accept", "fallback" },
       },
 
       cmdline = {
         keymap = {
-          ["<Tab>"] = { "show", "accept" },
-          ["<Up>"] = { "select_prev", "fallback" },
-          ["<Down>"] = { "select_next", "fallback" },
+          preset = "inherit",
         },
         completion = { menu = { auto_show = true } },
       },
