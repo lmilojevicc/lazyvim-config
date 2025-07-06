@@ -6,11 +6,9 @@ return {
     require("catppuccin").setup({
       flavour = "mocha",
       transparent_background = true,
+      show_end_of_buffer = false,
       term_colors = true,
-      dim_inactive = {
-        enabled = false,
-        percentage = 0.5,
-      },
+
       no_italic = false,
       no_bold = false,
       no_underline = false,
@@ -34,9 +32,18 @@ return {
         aerial = true,
         alpha = true,
         blink_cmp = true,
+        beacon = true,
         cmp = true,
+        dropbar = {
+          enabled = true,
+          color_mode = true,
+        },
+        dap = true,
+        dap_ui = true,
+        diffview = true,
         dashboard = true,
         flash = true,
+        dadbod_ui = true,
         fzf = true,
         grug_far = true,
         gitsigns = true,
@@ -58,6 +65,7 @@ return {
           },
         },
         navic = { enabled = true, custom_bg = "lualine" },
+        nvim_surround = true,
         neotest = true,
         neotree = true,
         noice = true,
@@ -69,8 +77,30 @@ return {
         treesitter_context = true,
         which_key = true,
       },
+
+      custom_highlights = function(colors)
+        return {
+          NormalFloat = { bg = colors.crust },
+          NoiceCmdlinePopupBorder = { fg = colors.pink },
+          NoiceCmdlinePopupTitle = { fg = colors.pink },
+          NoiceCmdlineIcon = { fg = colors.pink },
+          NoiceVirtualText = { fg = colors.rosewater },
+          SnacksInputTitle = { fg = colors.blue },
+          SnacksInputBorder = { fg = colors.blue },
+          SnacksInputIcon = { fg = colors.blue },
+
+          Pmenu = { bg = "" },
+          Normal = { bg = colors.crust },
+          NormalNC = { bg = colors.crust },
+          SignColumn = { bg = colors.crust },
+          EndOfBuffer = { bg = colors.crust },
+          CurSearch = { bg = colors.rosewater },
+          Search = { fg = "", bg = colors.surface0 },
+          IncSearch = { fg = colors.crust, bg = colors.blue },
+        }
+      end,
     })
 
-    vim.cmd.colorscheme("catppuccin-mocha")
+    vim.cmd.colorscheme("catppuccin")
   end,
 }

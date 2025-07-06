@@ -1,11 +1,5 @@
 return {
   "mason-org/mason.nvim",
-  cmd = { "Mason", "MasonUpdate", "MasonInstall", "MasonLog", "MasonUninst", "MasonUninstAll" },
-  dependencies = {
-    "mason-org/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-
   opts = {
     ui = {
       icons = {
@@ -16,11 +10,7 @@ return {
     },
   },
 
-  build = ":MasonUpdate",
-
-  keys = function()
-    return {
-      { "<leader>ms", "<cmd>Mason<CR>", desc = "󰽤 Open Mason" },
-    }
-  end,
+  keys = {
+    { "<leader>ms", "<cmd>Mason<CR>", desc = "󰽤 Open Mason" },
+  },
 }
